@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  * @author wdrdr
  */
 @Repository
-public interface TestRepository extends JpaRepository<Test, Integer> {
+public interface SubjectRepository extends JpaRepository<Subject, Integer> {
     
 }

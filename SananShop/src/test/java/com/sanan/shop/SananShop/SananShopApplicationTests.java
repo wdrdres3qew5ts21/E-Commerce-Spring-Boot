@@ -1,5 +1,7 @@
 package com.sanan.shop.SananShop;
 
+import org.hibernate.Hibernate;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,12 +13,13 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class SananShopApplicationTests {
 
     @Autowired
-    private TestService testService;
-    
+    private SubjectService testService;
+
     @Test
-    public void testGet() {
-        System.out.println(testService.isTestPass());
+    public void testGetSubjectById() {
+        Subject test = testService.getSubjectById(1);
+        Hibernate.initialize(test);
+        System.out.println(test);
     }
-    
 
 }

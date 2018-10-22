@@ -15,17 +15,17 @@ import javax.persistence.Id;
  */
 @Entity
 @JsonIgnoreProperties(value = {"hibernateLazyInitializer", "handler"})
-public class Test {
+public class Subject {
     @Id
     private int id;
 
     private String word;
 
-    public Test() {
+    public Subject() {
 
     }
 
-    public Test(int id, String word) {
+    public Subject(int id, String word) {
         this.id = id;
         this.word = word;
     }

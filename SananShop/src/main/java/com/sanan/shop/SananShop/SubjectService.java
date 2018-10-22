@@ -15,25 +15,21 @@ import org.springframework.stereotype.Service;
  */
 
 @Service
-public class TestService {
+public class SubjectService {
 
     @Autowired
-    private TestRepository testRepository;
+    private SubjectRepository subjectRepository;
 
-    public Test getTestById(int id) {
-        return testRepository.getOne(id);
+    public Subject getSubjectById(int id) {
+        return subjectRepository.getOne(id);
     }
     
-    public Test saveTest(Test test){
-        return testRepository.save(test);
+    public Subject saveTest(Subject test){
+        return subjectRepository.save(test);
     }
 
-    public List<Test> getAllSubject() {
-        return testRepository.findAll();
-    }
-    
-    public boolean isTestPass(){
-        return false;
+    public List<Subject> getAllSubject() {
+        return subjectRepository.findAll();
     }
     
     
