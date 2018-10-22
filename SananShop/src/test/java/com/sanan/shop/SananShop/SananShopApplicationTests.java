@@ -1,5 +1,6 @@
 package com.sanan.shop.SananShop;
 
+import javax.transaction.Transactional;
 import org.hibernate.Hibernate;
 import org.junit.Assert;
 import org.junit.Test;
@@ -13,13 +14,16 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class SananShopApplicationTests {
 
     @Autowired
-    private SubjectService testService;
+    private SubjectService subjectService;
 
     @Test
+    @Transactional
     public void testGetSubjectById() {
-        Subject test = testService.getSubjectById(1);
-        Hibernate.initialize(test);
-        System.out.println(test);
+        Subject actualSubject = subjectService.getSubjectById(1);
+        Subject expectedSubject = new Subject(1, "Software Process INT 202");
+        System.out.println("Expect : " + expectedSubject);
+        System.out.println("Actual : " + actualSubject);
+        Assert.assertEquals(expectedSubject.toString(), actualSubject.toString());
     }
 
 }

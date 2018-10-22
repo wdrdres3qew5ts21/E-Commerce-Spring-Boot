@@ -46,4 +46,10 @@ public class Subject {
         this.word = word;
     }
 
+    @Override
+    public String toString() {
+        return "Subject{" + "id=" + id + ", word=" + word + '}';
+    }
+
+    
 }
