@@ -18,19 +18,19 @@ import org.springframework.web.bind.annotation.PathVariable;
  */
 @CrossOrigin(origins = "http://localhost:8080")
 @RestController
-public class HelloWorldController {
+public class SubjectController {
 
     @Autowired
-    SubjectService testService;
+    SubjectService subjectService;
     
     @GetMapping("/subject")
     public List<Subject> getAllTest() {
-        return testService.getAllSubject();
+        return subjectService.getAllSubject();
     }
     
     @GetMapping("/subject/{id}")
     public Subject getTestById(@PathVariable int id) {
-        return testService.getSubjectById(id);
+        return subjectService.getSubjectById(id);
     }
 
 }
